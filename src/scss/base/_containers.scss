@@ -1,0 +1,79 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+.hero{
+    width: 100%;
+    height: 630px;
+}
+.hero__container{
+    margin-top: 2rem;
+    width: 90%;
+    display: grid;
+    gap: 2.5rem;
+}
+.hero__div{
+    margin-top: 2rem;
+}
+@include m.tablet {
+    .hero{
+        height: 700px;
+        display: grid;
+        grid-template-columns: 53% 48%;
+    }
+    .hero__container{
+        gap: 3.5rem;
+    }
+    .hero__info{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: -5%;
+    }
+}
+@include m.desktop {
+    .hero{
+        height: 800px;
+        grid-template-columns: auto 540px auto;
+        background-color: v.$white;
+        position: relative; 
+    }
+    .hero__info{
+        inset: 0;
+        position: absolute;
+        width: auto;
+        transform: none;
+    }
+    .hero__div{
+        max-width: 111rem;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        height: 100%;
+    }
+    .container{
+        max-width: 110rem;
+        align-items: center;
+        display: flex;
+        column-gap: 29rem;
+        h1{
+            width: 570px;
+            font-size: 9.6rem;
+            margin: 0;
+        }
+        p{
+            width: unset;
+        }
+        .btn{
+            width: 70%;
+        }
+    }
+    .hero__container{
+        width: 448px;
+    }
+    .hero__helper{
+        background-color: v.$white;
+        flex-grow: 1;
+        mix-blend-mode: difference;
+        z-index: 1;
+    } 
+} 

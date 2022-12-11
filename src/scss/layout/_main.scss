@@ -1,0 +1,110 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.main{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10rem;
+    overflow-x: auto;
+    .main__gallery, .main__explain, .main__container{
+        display: grid;
+        gap: 1.5rem;
+    }
+    .main__container{
+        height: 550px;
+        grid-template-rows: 320px 220px;
+    }
+    .main__gallery{
+        height: 1005px;
+        grid-template-rows: 480px 494px;    
+    }
+    .main__explain{
+        grid-template-rows: 200px 294px;
+    }
+    .main__info{
+        order: 1;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .explain__info{
+        padding: 3.5rem;
+        background-color: v.$black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+.main__heading, .explain__heading{
+    font-size: 5rem;
+}
+.explain__heading, .explain__text{
+    color: v.$white;
+}
+@include m.tablet {
+    .main{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        justify-content: center;
+        height: 1380px;
+    }
+    .main__info{
+        order: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;    
+    }
+    .explain__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        gap: 2rem;    
+    }
+    .main .main__explain{
+        grid-template-rows: 314px auto;
+    } 
+    .main .main__container{            
+        height: 400px;
+        grid-template-columns: auto 400px;
+        grid-template-rows: unset;
+    }
+    .main .main__gallery{
+            
+        height: 720px;
+        grid-template-columns: 400px auto;
+        grid-template-rows: unset;
+    }
+    .main .main__info{
+        order: unset;
+        gap: 2rem; 
+    }
+}
+@include m.desktop {
+    .main{
+        margin: 0 auto;
+        max-width: 1100px;
+        .main__container{
+            grid-template-columns: auto 642px;
+        }
+        .main__gallery{
+            grid-template-columns: 640px auto;
+        }
+    }
+    .main__container{
+        img{
+            height: 400px;
+        }
+    }
+    .main__photo1{
+        img{
+            height: 720px;
+        }
+    }
+    .text__main{
+        width: 85%;
+    }
+}

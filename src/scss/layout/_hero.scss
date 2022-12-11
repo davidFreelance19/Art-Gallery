@@ -1,0 +1,76 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.hero__helper{
+    display: none;
+}
+@include m.desktop {
+    .hero__helper{
+        display: block;
+    }
+}
+.hero__heading{
+    font-size: 6rem;
+    margin: 0 2rem;
+    width: 68%;
+}
+@include m.tablet {
+    .hero__heading, .hero__text{
+        width: 80%;
+    }
+}
+.text-body{
+    font-size: 1.8rem;
+}
+@include m.tablet {
+    .text-body{
+        font-size: 2rem;
+        line-height: 2.8rem;
+    }
+}
+.hero__button{
+    width:75%;
+    display: grid;
+    grid-template-columns: 85% 15%;
+    align-items: center;
+    .btn__text{    
+        background-color: v.$black;
+        text-align: center;
+        color: v.$white;
+        letter-spacing: .3rem;
+        font-size: 2rem;
+    }
+}
+@include m.tablet {
+    .hero__button{
+        width: 50%;
+    }
+    .hero__button .btn__text{
+        height: 100%;
+        font-size: 1.6rem;
+    }
+}
+.hero__image{
+    img{
+        width: 100%;
+    }
+    @include m.tablet {
+        img{
+            width: initial;
+            height: 80rem;
+        }
+    }
+    @include m.desktop {
+        img{
+            width: 100%;
+        }
+    }
+}
+.btn__arrow, .btn__text{
+    padding: 2rem 0;
+}
+.btn__arrow{
+    display: flex;
+    justify-content: center;
+    background-color: v.$gold;
+    height: 100%;
+}

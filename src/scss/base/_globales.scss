@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+.heading{
+    font-family: v.$font-shoulder;
+}
+.text-body{
+    font-family: v.$font-outfit;
+}
+.m-auto{
+    margin: 0 auto;
+}
+.uppercase{
+    text-transform: uppercase;
+}
